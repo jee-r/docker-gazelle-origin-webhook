@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM golang:1.21-alpine AS webhook-builder
+FROM golang:1.25-alpine AS webhook-builder
 
 WORKDIR /build
 
