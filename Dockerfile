@@ -13,8 +13,8 @@ FROM python:3.11-alpine
 # Metadata
 LABEL org.opencontainers.image.title="Gazelle Origin Webhook" \
       org.opencontainers.image.description="Webhook server for gazelle-origin to generate origin.yaml files" \
-      org.opencontainers.image.url="https://github.com/jee-r/gazelle-origin-webhook" \
-      org.opencontainers.image.source="https://github.com/jee-r/gazelle-origin-webhook" \
+      org.opencontainers.image.url="https://github.com/jee-r/docker-gazelle-origin-webhook" \
+      org.opencontainers.image.source="https://github.com/jee-r/docker-gazelle-origin-webhook" \
       org.opencontainers.image.licenses="MIT"
 
 # Install runtime dependencies and gazelle-origin in one layer
