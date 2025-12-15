@@ -1,0 +1,3 @@
+.env
+docker-compose.[y|ya]ml
+./data

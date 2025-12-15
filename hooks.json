@@ -1,0 +1,54 @@
+[
+  {
+    "id": "gazelle-origin",
+    "execute-command": "/usr/local/bin/gazelle-origin",
+    "command-working-directory": "/data",
+    "include-command-output-in-response": true,
+    "trigger-rule": {
+      "match": {
+        "type": "value",
+        "value": '{{ getenv "WEBHOOK_SECRET" | js }}',
+        "parameter": {
+          "source": "header",
+          "name": "X-Webhook-Token"
+        }
+      }
+    },
+    "pass-arguments-to-command": [
+      {
+        "source": "payload",
+        "name": "torrent_identifier"
+      }
+    ]
+  },
+  {
+    "id": "gazelle-origin-write",
+    "execute-command": "/usr/local/bin/gazelle-origin",
+    "command-working-directory": "/data",
+    "include-command-output-in-response": true,
+    "trigger-rule": {
+      "match": {
+        "type": "value",
+        "value": '{{ getenv "WEBHOOK_SECRET" | js }}',
+        "parameter": {
+          "source": "header",
+          "name": "X-Webhook-Token"
+        }
+      }
+    },
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "-o"
+      },
+      {
+        "source": "payload",
+        "name": "output_path"
+      },
+      {
+        "source": "payload",
+        "name": "torrent_identifier"
+      }
+    ]
+  }
+]
