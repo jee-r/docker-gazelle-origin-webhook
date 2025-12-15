@@ -35,9 +35,6 @@ COPY hooks.json /hooks/hooks.json
 RUN mkdir -p /data
 WORKDIR /data
 
-# Default environment variables
-ENV WEBHOOK_SECRET=changeme
-
 EXPOSE 9000
 
 CMD ["webhook", "-hooks", "/hooks/hooks.json", "-template", "-verbose"]
