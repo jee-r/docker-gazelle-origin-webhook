@@ -18,7 +18,7 @@ LABEL org.opencontainers.image.title="Gazelle Origin Webhook" \
       org.opencontainers.image.licenses="MIT"
 
 # Install runtime dependencies and gazelle-origin in one layer
-RUN apk add --no-cache ca-certificates bash git && \
+RUN apk add --no-cache ca-certificates git && \
     git clone --depth 1 https://github.com/spinfast319/gazelle-origin.git /tmp/gazelle && \
     pip install --no-cache-dir -e /tmp/gazelle && \
     rm -rf /tmp/gazelle/.git && \
