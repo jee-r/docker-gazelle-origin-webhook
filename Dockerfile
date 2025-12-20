@@ -8,7 +8,7 @@ RUN apk add --no-cache git && \
     go build -ldflags="-s -w" -o webhook && \
     apk del git
 
-FROM python:3.11-alpine
+FROM python:3.14-alpine
 
 # Metadata
 LABEL org.opencontainers.image.title="Gazelle Origin Webhook" \
